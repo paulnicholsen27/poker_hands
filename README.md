@@ -1,4 +1,4 @@
-poker_hands
+Poker Hands
 ===========
 
 Find the winning poker hand!
