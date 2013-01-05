@@ -26,7 +26,7 @@ def best_wild_hand(hand):
 			red_joker = True
 	if black_joker == red_joker == False:
 		return best_hand(hand)
-	elif black_joker == True:
+	elif black_joker == True: 
 		if red_joker == True:
 			final_hands = [no_joker_hands + [black_card] + [red_card] for black_card in black_cards if black_joker == True and black_card not in no_joker_hands for red_card in red_cards if red_joker == True and red_card not in no_joker_hands]
 		else: #only black joker
@@ -57,6 +57,12 @@ def test_best_wild_hand():
 			== ['7C', '7D', '7H', '7S', 'JD'])
 	return 'test_best_wild_hand passes'
 
+# ------------------
+# Provided Functions
+# 
+# You may want to use some of the functions which
+# you have already defined in the unit to write 
+# your best_hand function.
 
 def hand_rank(hand):
 	"Return a value indicating the ranking of a hand."
@@ -82,7 +88,7 @@ def hand_rank(hand):
 	
 def card_ranks(hand):
 	"Return a list of the ranks, sorted with higher first."
-#	print "from card_ranks: ", hand
+	print "from card_ranks: ", hand
 	ranks = ['--23456789TJQKA'.index(r) for r, s in hand]
 	ranks.sort(reverse = True)
 	return [5, 4, 3, 2, 1] if (ranks == [14, 5, 4, 3, 2]) else ranks
@@ -115,7 +121,11 @@ def two_pair(ranks):
 	else:
 		return None 
 
-print test_best_wild_hand()
+#print test_best_wild_hand()
 
+
+
+
+print best_wild_hand('?B 2S JC JH ?R 4S 9C'.split())
 
 
